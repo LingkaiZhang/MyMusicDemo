@@ -8,4 +8,16 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!--去掉Activity的ActionBar的样式-->
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!--版权样式-->
+    <style name="CopyrightText">
+        <item name="android:textColor">@color/text_white</item>
+        <item name="android:textSize">@dimen/copyright</item>
+    </style>
+
 </resources>
