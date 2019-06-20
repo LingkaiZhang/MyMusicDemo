@@ -36,14 +36,25 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".MainActivity" />
 
-        <activity android:name=".activity.LoginActivity"/>
-
-        <activity android:name=".activity.GuideActivity"
-            android:screenOrientation="portrait"
+        <activity
+            android:name=".activity.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity
+            android:name=".activity.GuideActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".activity.RegisterActivity"
+            android:label="@string/phone_register"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".activity.LoginPhoneActivity"
+            android:label="@string/phone_login"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

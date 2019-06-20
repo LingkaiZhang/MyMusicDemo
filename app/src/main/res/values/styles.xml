@@ -8,6 +8,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!--toolbar样式-->
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
     <!--去掉Activity的ActionBar的样式-->
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
@@ -20,4 +25,16 @@
         <item name="android:textSize">@dimen/copyright</item>
     </style>
 
+    <!--登陆，注册界面EditText样式-->
+    <style name="EditText">
+        <item name="android:drawablePadding">@dimen/button_padding</item>
+        <item name="android:drawableLeft">@drawable/ic_phone</item>
+        <item name="android:paddingTop">@dimen/button_padding</item>
+        <item name="android:paddingBottom">@dimen/button_padding</item>
+        <item name="android:background">@drawable/selector_edittext</item>
+        <item name="android:lines">1</item>
+        <item name="android:layout_marginTop">@dimen/button_margin_top</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
 </resources>
