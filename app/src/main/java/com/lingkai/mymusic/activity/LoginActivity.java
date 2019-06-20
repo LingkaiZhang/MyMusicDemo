@@ -8,8 +8,14 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.lingkai.mymusic.AppContext;
 import com.lingkai.mymusic.MainActivity;
 import com.lingkai.mymusic.R;
+import com.lingkai.mymusic.domain.event.LoginSuccessEvent;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import butterknife.OnClick;
 
@@ -43,6 +49,12 @@ public class LoginActivity extends BaseCommonActivity {
         }
     }
 
+    @Override
+    protected void initDatas() {
+        super.initDatas();
+        EventBus.getDefault().register(this);
+    }
+
     @OnClick(R.id.bt_login)
     public void bt_login() {
         startActivity(LoginPhoneActivity.class);
@@ -58,5 +70,18 @@ public class LoginActivity extends BaseCommonActivity {
     @OnClick(R.id.tv_enter)
     public void tv_enter() {
         startActivity(MainActivity.class);
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void loginSuccessEvent(LoginSuccessEvent event) {
+        //连接融云服务器
+        //((AppContext)getApplication()).imConnect();
+        finish();
+    }
+
+    @Override
+    protected void onDestroy() {
+        EventBus.getDefault().unregister(this);
+        super.onDestroy();
     }
 }

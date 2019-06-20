@@ -24,12 +24,12 @@ android {
 
             //local
             //buildConfigField 'String', 'ENDPOINT', '"http://192.168.100.106:3000/v1/"'
-            buildConfigField 'String', 'ENDPOINT', '"http://10.0.2.2:3000/v1/"'
-            buildConfigField 'String', 'RESOURCE_PREFIX', '"http://dev-courses-misuc.ixuea.com/%s"'
+//            buildConfigField 'String', 'ENDPOINT', '"http://10.0.2.2:3000/v1/"'
+//            buildConfigField 'String', 'RESOURCE_PREFIX', '"http://dev-courses-misuc.ixuea.com/%s"'
 
             //dev
-            //buildConfigField 'String', 'ENDPOINT', '"http://api-dev-courses-misuc.ixuea.com/v1/"'
-            //buildConfigField 'String', 'RESOURCE_PREFIX', '"http://dev-courses-misuc.ixuea.com/%s"'
+            buildConfigField 'String', 'ENDPOINT', '"http://api-dev-courses-misuc.ixuea.com/v1/"'
+            buildConfigField 'String', 'RESOURCE_PREFIX', '"http://dev-courses-misuc.ixuea.com/%s"'
 
             //qa
             //buildConfigField 'String', 'ENDPOINT', '"http://api-qa-courses-misuc.ixuea.com/v1/"'
@@ -77,4 +77,29 @@ dependencies {
 
     //    apache common lang3
     api 'org.apache.commons:commons-lang3:3.0'
+
+    //    okhttp
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+
+    //    okhttp，chrome sniffer packet
+    api 'com.facebook.stetho:stetho:1.5.0'
+    api 'com.facebook.stetho:stetho-okhttp3:1.5.0'
+
+    //    retrofit
+    api 'com.squareup.retrofit2:retrofit:2.3.0'
+
+    //    gson
+    api 'com.google.code.gson:gson:2.8.2'
+
+    //    rxjava
+    api 'com.squareup.retrofit2:converter-gson:2.3.0'
+    api 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
+
+    //    okhttp,sniffer packet  抓包通知栏显示请求插件
+    debugApi 'com.readystatesoftware.chuck:library:1.1.0'
+    releaseApi 'com.readystatesoftware.chuck:library-no-op:1.1.0'
+
+    //    event bus
+    api 'org.greenrobot:eventbus:3.1.1'
 }
