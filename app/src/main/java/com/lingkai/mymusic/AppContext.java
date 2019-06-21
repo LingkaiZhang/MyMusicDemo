@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 
 import com.lingkai.mymusic.util.SharedPreferencesUtil;
+import com.mob.MobSDK;
 
 /**
  * Created by smile on 2018/6/21.
@@ -30,7 +31,7 @@ public class AppContext extends Application {
 //        EmojiCompat.init(config);
 
         //Share SDK
-       // MobSDK.init(this);
+        MobSDK.init(this);
 
         //    Rong IM
        // RongIMClient.init(this);
