@@ -65,13 +65,13 @@ public interface Service {
 //    @GET("topics/{id}.json")
 //    Observable<DetailResponse<Topic>> topicDetail(@Path("id") String id, @QueryMap Map<String, String> data);
 //
-//    /**
-//     * 根据nickname,获取用户详情
-//     * @param data
-//     * @return
-//     */
-//    @GET("users/-1.json")
-//    Observable<DetailResponse<User>> userDetailByNickname(@QueryMap Map<String, String> data);
+    /**
+     * 根据nickname,获取用户详情
+     * @param data
+     * @return
+     */
+    @GET("users/-1.json")
+    Observable<DetailResponse<User>> userDetailByNickname(@QueryMap Map<String, String> data);
 //
 //
 //

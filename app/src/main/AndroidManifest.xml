@@ -31,7 +31,6 @@
             android:name=".activity.SettingsActivity"
             android:label="@string/settings"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".activity.SplashActivity"
             android:screenOrientation="portrait"
@@ -61,6 +60,12 @@
             android:name=".activity.LoginPhoneActivity"
             android:label="@string/phone_login"
             android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".activity.UserDetailActivity"
+            android:label="@string/user_detail"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
     </application>
 
 </manifest>

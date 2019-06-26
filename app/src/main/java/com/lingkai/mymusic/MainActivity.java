@@ -3,7 +3,6 @@ package com.lingkai.mymusic;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -14,6 +13,7 @@ import android.widget.TextView;
 import com.lingkai.mymusic.activity.BaseTitleActivity;
 import com.lingkai.mymusic.activity.LoginActivity;
 import com.lingkai.mymusic.activity.SettingsActivity;
+import com.lingkai.mymusic.activity.UserDetailActivity;
 import com.lingkai.mymusic.adapter.HomeAdapter;
 import com.lingkai.mymusic.api.Api;
 import com.lingkai.mymusic.domain.User;
@@ -113,7 +113,7 @@ public class MainActivity extends BaseTitleActivity implements View.OnClickListe
     public void avatarClick() {
         closeDrawer();
         if (sp.isLogin()) {
-            // startActivityExtraId(UserDetailActivity.class, sp.getUserId());
+            startActivityExtraId(UserDetailActivity.class, sp.getUserId());
         } else {
             startActivity(LoginActivity.class);
         }

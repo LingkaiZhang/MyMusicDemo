@@ -440,9 +440,13 @@ MobSDK {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    //noinspection GradleDependency
+    //noinspection GradleCompatible,GradleDependency
     implementation "com.android.support:appcompat-v7:$rootProject.androidSupportVersion"
     implementation "com.android.support:design:$rootProject.androidSupportVersion"
+
+    //    palette 调色板插件 用于获取图片颜色
+    //noinspection GradleDependency
+    api "com.android.support:palette-v7:$rootProject.androidSupportVersion"
 
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     testImplementation 'junit:junit:4.12'
@@ -489,4 +493,7 @@ dependencies {
 
     //    event bus
     api 'org.greenrobot:eventbus:3.1.1'
+
+    //indicator
+    api 'com.github.hackware1993:MagicIndicator:1.6.0'
 }
