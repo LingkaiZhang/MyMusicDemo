@@ -13,12 +13,18 @@ import android.widget.TextView;
 
 import com.lingkai.mymusic.activity.BaseTitleActivity;
 import com.lingkai.mymusic.activity.LoginActivity;
+import com.lingkai.mymusic.activity.SettingsActivity;
 import com.lingkai.mymusic.adapter.HomeAdapter;
 import com.lingkai.mymusic.api.Api;
 import com.lingkai.mymusic.domain.User;
+import com.lingkai.mymusic.domain.event.LogoutSuccessEvent;
 import com.lingkai.mymusic.domain.response.DetailResponse;
 import com.lingkai.mymusic.reactivex.HttpListener;
 import com.lingkai.mymusic.util.UserUtil;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
 
@@ -52,6 +58,9 @@ public class MainActivity extends BaseTitleActivity implements View.OnClickListe
     protected void initViews() {
         super.initViews();
 
+        //也可以延迟注册，比如：当前用户点击到设置界面是才注册
+        EventBus.getDefault().register(this);
+
         drawer_layout = findViewById(R.id.drawer_layout);
 
         iv_avatar = findViewById(R.id.iv_avatar);
@@ -77,6 +86,11 @@ public class MainActivity extends BaseTitleActivity implements View.OnClickListe
         drawer_layout.addDrawerListener(toggle);
         toggle.syncState();
 
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void logoutSuccessEvent(LogoutSuccessEvent event) {
+        showUserInfo();
     }
 
     @Override
@@ -152,6 +166,10 @@ public class MainActivity extends BaseTitleActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.ll_settings:
+                startActivity(SettingsActivity.class);
+                closeDrawer();
+                break;
             case R.id.iv_music:
                 vp.setCurrentItem(0, true);
                 break;
@@ -192,5 +210,11 @@ public class MainActivity extends BaseTitleActivity implements View.OnClickListe
     @Override
     public void onPageScrollStateChanged(int state) {
 
+    }
+
+    @Override
+    protected void onDestroy() {
+        EventBus.getDefault().unregister(this);
+        super.onDestroy();
     }
 }

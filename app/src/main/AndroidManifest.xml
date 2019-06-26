@@ -28,6 +28,11 @@
         tools:ignore="GoogleAppIndexingWarning">
 
         <activity
+            android:name=".activity.SettingsActivity"
+            android:label="@string/settings"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
             android:name=".activity.SplashActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
@@ -42,20 +47,16 @@
             android:label=""
             android:launchMode="singleTask"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".activity.LoginActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
-
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.GuideActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".activity.RegisterActivity"
             android:label="@string/phone_register"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".activity.LoginPhoneActivity"
             android:label="@string/phone_login"
