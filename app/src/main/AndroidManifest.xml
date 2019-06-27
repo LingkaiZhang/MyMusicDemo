@@ -28,10 +28,14 @@
         tools:ignore="GoogleAppIndexingWarning">
 
         <activity
+            android:name=".activity.MusicPlayerActivity"
+            android:label=""
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity
             android:name=".activity.BaseWebViewActivity"
             android:label=""
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".activity.SettingsActivity"
             android:label="@string/settings"

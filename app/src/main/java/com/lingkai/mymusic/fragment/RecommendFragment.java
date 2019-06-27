@@ -14,6 +14,8 @@ import com.github.jdsjlzx.recyclerview.LRecyclerView;
 import com.github.jdsjlzx.recyclerview.LRecyclerViewAdapter;
 import com.lingkai.mymusic.R;
 import com.lingkai.mymusic.activity.BaseWebViewActivity;
+import com.lingkai.mymusic.activity.MusicPlayerActivity;
+import com.lingkai.mymusic.adapter.BaseRecyclerViewAdapter;
 import com.lingkai.mymusic.adapter.RecommendAdapter;
 import com.lingkai.mymusic.api.Api;
 import com.lingkai.mymusic.domain.Advertisement;
@@ -76,6 +78,19 @@ public class RecommendFragment extends BaseCommonFragment implements OnBannerLis
         super.initDatas();
 
         adapter = new RecommendAdapter(getActivity());
+
+        adapter.setOnItemClickListener(new BaseRecyclerViewAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseRecyclerViewAdapter.ViewHolder holder, int position) {
+                Object data = adapter.getData(position);
+                if (data instanceof Song) {
+                    //单曲
+                    startActivity(MusicPlayerActivity.class);
+                }
+            }
+        });
+
+
         adapterWrapper = new LRecyclerViewAdapter(adapter);
         adapterWrapper.setSpanSizeLookup(new LRecyclerViewAdapter.SpanSizeLookup() {
             @Override

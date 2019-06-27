@@ -507,4 +507,5 @@ dependencies {
 
     //    banner
     api 'com.youth.banner:banner:1.4.10'
+    implementation 'org.jetbrains:annotations-java5:15.0'
 }
