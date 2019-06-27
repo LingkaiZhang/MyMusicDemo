@@ -3,9 +3,13 @@ package com.lingkai.mymusic.api;
 
 import com.facebook.stetho.okhttp3.StethoInterceptor;
 import com.lingkai.mymusic.AppContext;
+import com.lingkai.mymusic.domain.Advertisement;
+import com.lingkai.mymusic.domain.List;
 import com.lingkai.mymusic.domain.Session;
+import com.lingkai.mymusic.domain.Song;
 import com.lingkai.mymusic.domain.User;
 import com.lingkai.mymusic.domain.response.DetailResponse;
+import com.lingkai.mymusic.domain.response.ListResponse;
 import com.lingkai.mymusic.interceptor.HttpLoggingInterceptor;
 import com.lingkai.mymusic.util.Consts;
 import com.lingkai.mymusic.util.LogUtil;
@@ -123,11 +127,11 @@ public class Api {
         data.put(Consts.NICKNAME, nickname);
         return service.userDetailByNickname(data);
     }
-//
-//    public Observable<ListResponse<List>> lists() {
-//        HashMap<String, String> query = new HashMap<>();
-//        return service.lists(query);
-//    }
+
+    public Observable<ListResponse<List>> lists() {
+        HashMap<String, String> query = new HashMap<>();
+        return service.lists(query);
+    }
 //
 //    public Observable<ListResponse<SearchHot>> prompt(String content) {
 //        HashMap<String, String> query = new HashMap<>();
@@ -194,9 +198,9 @@ public class Api {
 //        return service.listsMyCollection();
 //    }
 //
-//    public Observable<ListResponse<Song>> songs() {
-//        return service.songs();
-//    }
+    public Observable<ListResponse<Song>> songs() {
+        return service.songs();
+    }
 //
 //    public Observable<DetailResponse<Song>> songsDetail(String id) {
 //        return service.songsDetail(id);
@@ -282,9 +286,9 @@ public class Api {
 //        return service.videoDetail(id);
 //    }
 //
-//    public Observable<ListResponse<Advertisement>> advertisements() {
-//        return service.advertisements();
-//    }
+    public Observable<ListResponse<Advertisement>> advertisements() {
+        return service.advertisements();
+    }
 
     //public Observable<DetailResponse<Lyric>>  lyricDetailWithBySongId(String id) {
     //    HashMap<String, String> data = new HashMap<>();

@@ -1,9 +1,13 @@
 package com.lingkai.mymusic.api;
 
 
+import com.lingkai.mymusic.domain.Advertisement;
+import com.lingkai.mymusic.domain.List;
 import com.lingkai.mymusic.domain.Session;
+import com.lingkai.mymusic.domain.Song;
 import com.lingkai.mymusic.domain.User;
 import com.lingkai.mymusic.domain.response.DetailResponse;
+import com.lingkai.mymusic.domain.response.ListResponse;
 
 import java.util.Map;
 
@@ -72,16 +76,16 @@ public interface Service {
      */
     @GET("users/-1.json")
     Observable<DetailResponse<User>> userDetailByNickname(@QueryMap Map<String, String> data);
-//
-//
-//
-//    /**
-//     * 歌单列表
-//     * @return
-//     */
-//    @GET("sheets.json")
-//    Observable<ListResponse<List>> lists(@QueryMap Map<String, String> data);
-//
+
+
+
+    /**
+     * 歌单列表
+     * @return
+     */
+    @GET("sheets.json")
+    Observable<ListResponse<List>> lists(@QueryMap Map<String, String> data);
+
 //    /**
 //     * 我创建的歌单列表
 //     * @return
@@ -192,14 +196,14 @@ public interface Service {
 //    @DELETE("likes/{id}.json")
 //    Observable<DetailResponse<Comment>> unlike(@Path("id") String id);
 //
-//
-//    /**
-//     * 单曲列表
-//     * @return
-//     */
-//    @GET("songs.json")
-//    Observable<ListResponse<Song>> songs();
-//
+
+    /**
+     * 单曲列表
+     * @return
+     */
+    @GET("songs.json")
+    Observable<ListResponse<Song>> songs();
+
 //    /**
 //     * 获取歌曲详情
 //     * @param id
@@ -294,11 +298,11 @@ public interface Service {
 //  //   */
 //  //  @GET("lyrics.json")
 //  //  Observable<DetailResponse<Lyric>> lyricDetailWithBySongId(@QueryMap Map<String, String> data);
-//
-//    /**
-//     * 广告列表
-//     * @return
-//     */
-//    @GET("advertisements.json")
-//    Observable<ListResponse<Advertisement>> advertisements();
+
+    /**
+     * 广告列表
+     * @return
+     */
+    @GET("advertisements.json")
+    Observable<ListResponse<Advertisement>> advertisements();
 }

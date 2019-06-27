@@ -444,6 +444,11 @@ dependencies {
     implementation "com.android.support:appcompat-v7:$rootProject.androidSupportVersion"
     implementation "com.android.support:design:$rootProject.androidSupportVersion"
 
+
+    //    cardview
+    api "com.android.support:cardview-v7:$rootProject.androidSupportVersion"
+
+
     //    palette 调色板插件 用于获取图片颜色
     //noinspection GradleDependency
     api "com.android.support:palette-v7:$rootProject.androidSupportVersion"
@@ -496,4 +501,10 @@ dependencies {
 
     //indicator
     api 'com.github.hackware1993:MagicIndicator:1.6.0'
+
+    //Recycler View header
+    api 'com.github.jdsjlzx:LRecyclerView:1.5.0'
+
+    //    banner
+    api 'com.youth.banner:banner:1.4.10'
 }
